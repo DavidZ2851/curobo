@@ -46,10 +46,12 @@ from omni.isaac.core.robots import Robot
 from omni.isaac.core.utils.types import ArticulationAction
 
 try:
-    # Third Party
     from omni.isaac.urdf import _urdf  # isaacsim 2022.2
-except ImportError:
-    from omni.importer.urdf import _urdf  # isaac sim 2023.1
+except:
+    try:
+        from omni.importer.urdf import _urdf  # isaac sim 2023.1
+    except:
+        from isaacsim.asset.importer.urdf import _urdf  # isaac sim 5.x
 
 # CuRobo
 from curobo.util.usd_helper import UsdHelper

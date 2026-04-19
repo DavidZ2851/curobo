@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="franka_robotiq_2f_85">
+  <joint name="finger_joint" type="revolute">
+    <origin xyz="0.0216383 -0.0216383 0.0728365" rpy="1.5707965 0.0000001 -0.785398 "/>
+    <parent link="base_link"/>
+    <child link="left_outer_knuckle"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="0." upper="0.7853982" effort="16.5" velocity="8.7266463"/>
+  </joint>
+  <joint name="left_inner_finger_joint" type="revolute">
+    <origin xyz="0.0980938 0.0676871 -0.0133 " rpy="-3.1415925 0. -1.5967691"/>
+    <parent link="left_outer_finger"/>
+    <child link="left_inner_finger"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="10000000." velocity="174.5329252"/>
+    <!-- <mimic joint="finger_joint" multiplier="1" offset="0" /> -->
+  </joint>
+  <joint name="left_inner_finger_knuckle_joint" type="revolute">
+    <origin xyz="0.0175225 -0.0074742 -0.0133 " rpy="-3.1415925 -0.0000002 -0.0541607"/>
+    <parent link="left_inner_finger"/>
+    <child link="left_inner_knuckle"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="10000000." velocity="174.5329252"/>
+    <!-- <mimic joint="finger_joint" multiplier="-1" offset="0" /> -->
+  </joint>
+  <joint name="left_outer_finger_FixedJoint" type="fixed">
+    <origin xyz="-0.0295086 -0.05526 -0. " rpy="3.1415925 0.0000002 1.5906744"/>
+    <parent link="left_outer_knuckle"/>
+    <child link="left_outer_finger"/>
+  </joint>
+  <joint name="panda_hand_joint" type="fixed">
+    <origin xyz="0. -0. -0." rpy="1.5707964 -0.7853981 -1.5707964"/>
+    <parent link="panda_link8"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="panda_joint1" type="revolute">
+    <origin xyz="-0. 0. 0.333" rpy="0. -1.5707964 0. "/>
+    <parent link="panda_link0"/>
+    <child link="panda_link1"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8973001" upper="2.8973001" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint2" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+    <parent link="panda_link1"/>
+    <child link="panda_link2"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-1.7628" upper="1.7628" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint3" type="revolute">
+    <origin xyz="-0.0000005 -0.2556517 0.1857369" rpy="0.0000032 -0.6283058 -1.5707983"/>
+    <parent link="panda_link2"/>
+    <child link="panda_link3"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8973001" upper="2.8973001" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint4" type="revolute">
+    <origin xyz="-0.0000001 0.0000002 -0.0824999" rpy="-0.0000002 0.0000023 -1.5707963"/>
+    <parent link="panda_link3"/>
+    <child link="panda_link4"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.0718" upper="-0.0698" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint5" type="revolute">
+    <origin xyz="0. -0.2621694 -0.292454 " rpy="3.1415925 0.6283211 -1.5707963"/>
+    <parent link="panda_link4"/>
+    <child link="panda_link5"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8973001" upper="2.8973001" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint6" type="revolute">
+    <origin xyz="-0.0000001 -0.0000001 -0.0000001" rpy="-0. -0.0001352 -1.5707964"/>
+    <parent link="panda_link5"/>
+    <child link="panda_link6"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.0175" upper="3.7525" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint7" type="revolute">
+    <origin xyz="0. 0.0836914 0.0271982" rpy="-3.141592 1.2565801 1.5707967"/>
+    <parent link="panda_link6"/>
+    <child link="panda_link7"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.8973001" upper="2.8973001" effort="100000." velocity="10.0000005"/>
+  </joint>
+  <joint name="panda_joint8" type="fixed">
+    <origin xyz="0.107 -0. 0.0000001" rpy="3.141545 -0. 3.1415925"/>
+    <parent link="panda_link7"/>
+    <child link="panda_link8"/>
+  </joint>
+  <joint name="right_inner_finger_joint" type="revolute">
+    <origin xyz="0.0980942 -0.0676843 -0.0133 " rpy="-3.1415925 -0. 1.5968281"/>
+    <parent link="right_outer_finger"/>
+    <child link="right_inner_finger"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="10000000." velocity="174.5329252"/>
+    <!-- <mimic joint="left_inner_finger_joint" multiplier="1" offset="0" /> -->
+  </joint>
+  <joint name="right_inner_finger_knuckle_joint" type="revolute">
+    <origin xyz="0.0174709 0.007594 -0.0133 " rpy="-0.0000002 0.0000001 0.0610087"/>
+    <parent link="right_inner_finger"/>
+    <child link="right_inner_knuckle"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="10000000." velocity="174.5329252"/>
+    <!-- <mimic joint="left_inner_finger_knuckle_joint" multiplier="1" offset="0" /> -->
+  </joint>
+  <joint name="right_outer_finger_FixedJoint" type="fixed">
+    <origin xyz="0.0291465 0.0554518 0. " rpy="-0.0000001 -0.0000003 -1.5443779"/>
+    <parent link="right_outer_knuckle"/>
+    <child link="right_outer_finger"/>
+  </joint>
+  <joint name="right_outer_knuckle_joint" type="revolute">
+    <origin xyz="-0.0216383 0.0216383 0.0728365" rpy="-1.5707961 0.0000001 -0.785398 "/>
+    <parent link="base_link"/>
+    <child link="right_outer_knuckle"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="0." upper="0.7853982" effort="5." velocity="174.5329252"/>
+    <!-- <mimic joint="finger_joint" multiplier="1" offset="0" /> -->
+
+  </joint>
+  <joint name="rootJoint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="panda"/>
+    <child link="panda_link0"/>
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0000165 0.0000157 0.0502549" rpy="0. 0. 0."/>
+      <mass value="0.6098911"/>
+      <inertia ixx="0.0004518" ixy="0.0000889" ixz="0." iyy="0.0004518" iyz="0." izz="0.0004747"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0.017932" rpy="1.5707961 -0.0000001 2.3561947"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/Defeatured_2F_85_PAD_OPEN_basestep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.017932" rpy="1.5707961 -0.0000001 2.3561947"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/Defeatured_2F_85_PAD_OPEN_basestep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_inner_finger">
+    <inertial>
+      <origin xyz="0.0180805 -0.0291535 -0.0133 " rpy="0. 0. 0."/>
+      <mass value="0.0197616"/>
+      <inertia ixx="0.000001" ixy="0.0000001" ixz="-0." iyy="0.0000028" iyz="-0." izz="0.0000032"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0739814 0.0935379 -0.0133 " rpy="-3.1415925 -0.0000002 -0.0541606"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_finger_Defeatured_2F_85_PAD_OPEN_finger4step_01_Defeatured_2F_85_PAD_OPEN_finger4step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.0739814 0.0935379 -0.0133 " rpy="-3.1415925 -0.0000002 -0.0541606"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_finger_Defeatured_2F_85_PAD_OPEN_fingertipsstep_01_Defeatured_2F_85_PAD_OPEN_fingertipsstep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0739814 0.0935379 -0.0133 " rpy="-3.1415925 -0.0000002 -0.0541606"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_finger_Defeatured_2F_85_PAD_OPEN_finger4step_01_Defeatured_2F_85_PAD_OPEN_finger4step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0739814 0.0935379 -0.0133 " rpy="-3.1415925 -0.0000002 -0.0541606"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_finger_Defeatured_2F_85_PAD_OPEN_fingertipsstep_01_Defeatured_2F_85_PAD_OPEN_fingertipsstep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_inner_knuckle">
+    <inertial>
+      <origin xyz="0.0175578 -0.0214753 0. " rpy="0. 0. 0."/>
+      <mass value="0.0273069"/>
+      <inertia ixx="0.0000045" ixy="0.0000002" ixz="-0." iyy="0.000008" iyz="-0." izz="0.0000118"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0452456 -0.1065077 0. " rpy="0.0000002 -0. -0.0538043"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_knuckle_Defeatured_2F_85_PAD_OPEN_finger3step_01_Defeatured_2F_85_PAD_OPEN_finger3step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0452456 -0.1065077 0. " rpy="0.0000002 -0. -0.0538043"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_inner_knuckle_Defeatured_2F_85_PAD_OPEN_finger3step_01_Defeatured_2F_85_PAD_OPEN_finger3step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_outer_finger">
+    <inertial>
+      <origin xyz="0.0695766 0.0655681 0.0000055" rpy="0. 0. 0."/>
+      <mass value="0.0391792"/>
+      <inertia ixx="0.0000109" ixy="-0.0000002" ixz="-0." iyy="0.0000043" iyz="-0." izz="0.0000132"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0010659 0.0014305 0. " rpy="0. 0. -1.596769"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_outer_finger_Defeatured_2F_85_PAD_OPEN_finger2step_01_Defeatured_2F_85_PAD_OPEN_finger2step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0010659 0.0014305 0. " rpy="0. 0. -1.596769"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_outer_finger_Defeatured_2F_85_PAD_OPEN_finger2step_01_Defeatured_2F_85_PAD_OPEN_finger2step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_outer_knuckle">
+    <inertial>
+      <origin xyz="0.0121412 -0.0003448 -0. " rpy="0. 0. 0."/>
+      <mass value="0.0127346"/>
+      <inertia ixx="0.0000003" ixy="-0.0000001" ixz="0." iyy="0.0000021" iyz="0." izz="0.0000021"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0281376 -0.0562069 0. " rpy="-3.1415925 -0. -3.0972557"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_outer_knuckle_Defeatured_2F_85_PAD_OPEN_Finger1step_01_Defeatured_2F_85_PAD_OPEN_Finger1step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0281376 -0.0562069 0. " rpy="-3.1415925 -0. -3.0972557"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/left_outer_knuckle_Defeatured_2F_85_PAD_OPEN_Finger1step_01_Defeatured_2F_85_PAD_OPEN_Finger1step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda"/>
+  <link name="panda_link8">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.1"/>
+      <inertia ixx="0.000046" ixy="0." ixz="0." iyy="0.000046" iyz="0." izz="0.0000703"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.009 -0. -0. " rpy="0. -1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.0375" length="0.018"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.009 -0. -0. " rpy="0. -1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.0375" length="0.018"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link0">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.8142028"/>
+      <inertia ixx="0.0000013" ixy="0." ixz="0." iyy="0.0000017" iyz="0." izz="0.000002"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link0_geometry_panda_link0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link0_geometry_panda_link0.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link1">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.3599997"/>
+      <inertia ixx="0.0000019" ixy="0." ixz="0." iyy="0.0000014" iyz="0." izz="0.0000009"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link1_geometry_panda_link1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link1_geometry_panda_link1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link2">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.3795187"/>
+      <inertia ixx="0.0000019" ixy="0." ixz="0." iyy="0.0000009" iyz="0." izz="0.0000015"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-1.5707918 0.9424905 -1.5707928"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link2_geometry_panda_link2.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-1.5707918 0.9424905 -1.5707928"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link2_geometry_panda_link2.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link3">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.6498823"/>
+      <inertia ixx="0.0000013" ixy="0." ixz="0." iyy="0.0000015" iyz="0." izz="0.0000014"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0000001 0. 0. " rpy="1.6407449 1.5707941 1.6407449"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link3_geometry_panda_link3.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0000001 0. 0. " rpy="1.6407449 1.5707941 1.6407449"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link3_geometry_panda_link3.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link4">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.6948018"/>
+      <inertia ixx="0.0000013" ixy="0." ixz="0." iyy="0.0000015" iyz="0." izz="0.0000016"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. -0." rpy="-1.5707967 -0.9424753 -1.5707958"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link4_geometry_panda_link4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. -0." rpy="-1.5707967 -0.9424753 -1.5707958"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link4_geometry_panda_link4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link5">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.9812818"/>
+      <inertia ixx="0.0000033" ixy="0." ixz="0." iyy="0.0000027" iyz="0." izz="0.0000012"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0000001 -0.0000001 -0.0000001" rpy="-1.5708063 1.5706611 -1.5708063"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link5_geometry_panda_link5.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0000001 -0.0000001 -0.0000001" rpy="-1.5708063 1.5706611 -1.5708063"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link5_geometry_panda_link5.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link6">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.1285807"/>
+      <inertia ixx="0.0000003" ixy="0." ixz="0." iyy="0.0000004" iyz="0." izz="0.0000005"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. -0.0000001 0.0000004" rpy="1.5707965 -0.3142162 1.5707961"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link6_geometry_panda_link6.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. -0.0000001 0.0000004" rpy="1.5707965 -0.3142162 1.5707961"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link6_geometry_panda_link6.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="panda_link7">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.4052913"/>
+      <inertia ixx="0.0000001" ixy="0." ixz="0." iyy="0.0000001" iyz="0." izz="0.0000001"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. 0. 0.0000001" rpy="1.5707965 1.5707488 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link7_geometry_panda_link7.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. 0. 0.0000001" rpy="1.5707965 1.5707488 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/panda_link7_geometry_panda_link7.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_inner_finger">
+    <inertial>
+      <origin xyz="0.0178804 0.0292766 -0.0133 " rpy="0. 0. 0."/>
+      <mass value="0.0197616"/>
+      <inertia ixx="0.000001" ixy="-0.0000001" ixz="0." iyy="0.0000028" iyz="0." izz="0.0000032"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0746202 -0.0930291 -0.0133 " rpy="-0.0000002 0.0000001 0.0610086"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_finger_Defeatured_2F_85_PAD_OPEN_finger4step_01_Defeatured_2F_85_PAD_OPEN_finger4step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.0746202 -0.0930291 -0.0133 " rpy="-0.0000002 0.0000001 0.0610086"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_finger_Defeatured_2F_85_PAD_OPEN_fingertipsstep_01_Defeatured_2F_85_PAD_OPEN_fingertipsstep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0746202 -0.0930291 -0.0133 " rpy="-0.0000002 0.0000001 0.0610086"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_finger_Defeatured_2F_85_PAD_OPEN_finger4step_01_Defeatured_2F_85_PAD_OPEN_finger4step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0746202 -0.0930291 -0.0133 " rpy="-0.0000002 0.0000001 0.0610086"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_finger_Defeatured_2F_85_PAD_OPEN_fingertipsstep_01_Defeatured_2F_85_PAD_OPEN_fingertipsstep.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_inner_knuckle">
+    <inertial>
+      <origin xyz="0.0174099 -0.0215953 0. " rpy="0. 0. 0."/>
+      <mass value="0.0273069"/>
+      <inertia ixx="0.0000045" ixy="0.0000002" ixz="0." iyy="0.000008" iyz="-0." izz="0.0000118"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0445133 -0.1068158 -0. " rpy="0.0000004 0.0000001 -0.0606703"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_knuckle_Defeatured_2F_85_PAD_OPEN_finger3step_01_Defeatured_2F_85_PAD_OPEN_finger3step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0445133 -0.1068158 -0. " rpy="0.0000004 0.0000001 -0.0606703"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_inner_knuckle_Defeatured_2F_85_PAD_OPEN_finger3step_01_Defeatured_2F_85_PAD_OPEN_finger3step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_outer_finger">
+    <inertial>
+      <origin xyz="0.0695769 -0.0655669 -0.0000056" rpy="0. 0. 0."/>
+      <mass value="0.0391792"/>
+      <inertia ixx="0.0000109" ixy="0.0000002" ixz="0." iyy="0.0000043" iyz="-0." izz="0.0000132"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0010695 -0.0014336 -0. " rpy="-3.1415925 -0. 1.5968281"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_outer_finger_Defeatured_2F_85_PAD_OPEN_finger2step_01_Defeatured_2F_85_PAD_OPEN_finger2step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0010695 -0.0014336 -0. " rpy="-3.1415925 -0. 1.5968281"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_outer_finger_Defeatured_2F_85_PAD_OPEN_finger2step_01_Defeatured_2F_85_PAD_OPEN_finger2step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_outer_knuckle">
+    <inertial>
+      <origin xyz="-0.0121432 0.0002654 0. " rpy="0. 0. 0."/>
+      <mass value="0.0127346"/>
+      <inertia ixx="0.0000003" ixy="-0.0000001" ixz="0." iyy="0.0000021" iyz="0." izz="0.0000021"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0277694 0.0563897 0. " rpy="3.1415923 0. 0.0508773"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_outer_knuckle_Defeatured_2F_85_PAD_OPEN_Finger1step_01_Defeatured_2F_85_PAD_OPEN_Finger1step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0277694 0.0563897 0. " rpy="3.1415923 0. 0.0508773"/>
+      <geometry>
+        <mesh filename="meshes/franka_robotiq_2f_85/right_outer_knuckle_Defeatured_2F_85_PAD_OPEN_Finger1step_01_Defeatured_2F_85_PAD_OPEN_Finger1step.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="grasp_frame">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0." ixz="0." iyy="0.000001" iyz="0." izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <joint name="grasp_frame_joint" type="fixed">
+    <!-- Parent: base_link (Robotiq mount), which is the common ancestor -->
+    <!-- Midpoint of fingertips in base_link frame, averaged from URDF kinematics -->
+    <origin xyz="0.0 0.0 0.15335" rpy="0. 0. 0."/>
+    <parent link="base_link"/>
+    <child link="grasp_frame"/>
+  </joint>
+</robot>

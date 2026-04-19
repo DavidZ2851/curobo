@@ -1,0 +1,515 @@
+robot_cfg:
+  kinematics:
+    use_usd_kinematics: true
+    isaac_usd_path: ''
+    usd_path: robot/franka_description/franka_robotiq_2f_85.usd
+    usd_robot_root: /panda
+    usd_flip_joints:
+      panda_joint1: Z
+      panda_joint2: Z
+      panda_joint3: Z
+      panda_joint4: Z
+      panda_joint5: Z
+      panda_joint6: Z
+      panda_joint7: Z
+      panda_finger_joint1: Y
+      panda_finger_joint2: Y
+    urdf_path: robot/franka_description/franka_robotiq_2f_85.urdf
+    asset_root_path: robot/franka_description
+    base_link: panda_link0
+    extra_links:
+      grasp_frame:
+        link_name: grasp_frame
+        joint_name: grasp_frame_joint
+        joint_type: FIXED
+        parent_link_name: base_link
+        fixed_transform:
+        - 0.15335
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.7071067811865476
+        - 0.0
+        - 0.7071067811865476
+    ee_link: grasp_frame
+    mesh_link_names:
+    - panda_link0
+    - panda_link1
+    - panda_link2
+    - panda_link3
+    - panda_link4
+    - panda_link5
+    - panda_link6
+    - panda_link7
+    - panda_link8
+    - base_link
+    - left_outer_knuckle
+    - left_outer_finger
+    - left_inner_knuckle
+    - left_inner_finger
+    - right_outer_knuckle
+    - right_outer_finger
+    - right_inner_knuckle
+    - right_inner_finger
+    collision_link_names:
+    - panda_link0
+    - panda_link1
+    - panda_link2
+    - panda_link3
+    - panda_link4
+    - panda_link5
+    - panda_link6
+    - panda_link7
+    - base_link
+    - left_outer_knuckle
+    - left_outer_finger
+    - left_inner_knuckle
+    - left_inner_finger
+    - right_outer_knuckle
+    - right_outer_finger
+    - right_inner_knuckle
+    - right_inner_finger
+    collision_spheres:
+      panda_link0:
+      - center:
+        - 0.0
+        - 0.0
+        - 0.085
+        radius: 0.032
+      - center:
+        - -0.1
+        - 0.0
+        - 0.085
+        radius: 0.032
+      panda_link1:
+      - center:
+        - 0.0
+        - -0.08
+        - 0.0
+        radius: 0.057
+      - center:
+        - 0.0
+        - -0.03
+        - 0.0
+        radius: 0.062
+      - center:
+        - 0.0
+        - 0.0
+        - -0.12
+        radius: 0.062
+      - center:
+        - 0.0
+        - 0.0
+        - -0.17
+        radius: 0.062
+      panda_link2:
+      - center:
+        - 0.0
+        - 0.0
+        - 0.03
+        radius: 0.057
+      - center:
+        - 0.0
+        - 0.0
+        - 0.08
+        radius: 0.057
+      - center:
+        - 0.0
+        - -0.12
+        - 0.0
+        radius: 0.057
+      - center:
+        - 0.0
+        - -0.17
+        - 0.0
+        radius: 0.057
+      panda_link3:
+      - center:
+        - 0.0
+        - 0.0
+        - -0.06
+        radius: 0.052
+      - center:
+        - 0.0
+        - 0.0
+        - -0.1
+        radius: 0.062
+      - center:
+        - 0.08
+        - 0.06
+        - 0.0
+        radius: 0.054
+      - center:
+        - 0.08
+        - 0.02
+        - 0.0
+        radius: 0.054
+      panda_link4:
+      - center:
+        - 0.0
+        - 0.0
+        - 0.02
+        radius: 0.054
+      - center:
+        - 0.0
+        - 0.0
+        - 0.06
+        radius: 0.054
+      - center:
+        - -0.08
+        - 0.095
+        - 0.0
+        radius: 0.057
+      - center:
+        - -0.08
+        - 0.06
+        - 0.0
+        radius: 0.054
+      panda_link5:
+      - center:
+        - 0.0
+        - 0.03
+        - 0.0
+        radius: 0.052
+      - center:
+        - 0.0
+        - 0.082
+        - 0.0
+        radius: 0.052
+      - center:
+        - 0.0
+        - 0.0
+        - -0.22
+        radius: 0.052
+      - center:
+        - 0.0
+        - 0.052
+        - -0.18
+        radius: 0.042
+      - center:
+        - 0.01
+        - 0.08
+        - -0.14
+        radius: 0.024
+      - center:
+        - 0.01
+        - 0.085
+        - -0.11
+        radius: 0.024
+      - center:
+        - 0.01
+        - 0.09
+        - -0.08
+        radius: 0.024
+      - center:
+        - 0.01
+        - 0.095
+        - -0.05
+        radius: 0.024
+      - center:
+        - -0.01
+        - 0.08
+        - -0.14
+        radius: 0.024
+      - center:
+        - -0.01
+        - 0.085
+        - -0.11
+        radius: 0.024
+      - center:
+        - -0.01
+        - 0.09
+        - -0.08
+        radius: 0.024
+      - center:
+        - -0.01
+        - 0.095
+        - -0.05
+        radius: 0.024
+      - center:
+        - 0.0
+        - -0.009
+        - 0.0
+        radius: 0.052
+      panda_link6:
+      - center:
+        - 0.085
+        - 0.035
+        - 0.0
+        radius: 0.047
+      - center:
+        - 0.085
+        - 0.0
+        - 0.0
+        radius: 0.047
+      - center:
+        - 0.085
+        - -0.015
+        - 0.0
+        radius: 0.047
+      panda_link7:
+      - center:
+        - 0.0
+        - 0.0
+        - 0.07
+        radius: 0.047
+      - center:
+        - 0.02
+        - 0.04
+        - 0.08
+        radius: 0.026
+      - center:
+        - 0.04
+        - 0.02
+        - 0.08
+        radius: 0.026
+      - center:
+        - 0.04
+        - 0.06
+        - 0.085
+        radius: 0.022
+      - center:
+        - 0.06
+        - 0.04
+        - 0.085
+        radius: 0.022
+      base_link:
+      - center:
+        - -0.040427
+        - 0.0
+        - 0.04
+        radius: 0.042
+      - center:
+        - -0.01921
+        - 0.0
+        - -0.027631
+        radius: 0.042
+      left_outer_knuckle:
+      - center:
+        - -0.051068
+        - 0.054468
+        - 0.004976
+        radius: 0.016
+      left_outer_finger:
+      - center:
+        - -0.020636
+        - 0.067478
+        - -0.056194
+        radius: 0.016
+      - center:
+        - 0.003344
+        - 0.06811
+        - -0.099334
+        radius: 0.01
+      left_inner_knuckle:
+      - center:
+        - -0.061589
+        - 0.036403
+        - -0.028152
+        radius: 0.012
+      left_inner_finger:
+      - center:
+        - -0.019176
+        - 0.049259
+        - -0.089206
+        radius: 0.01
+      right_outer_knuckle:
+      - center:
+        - -0.05263
+        - -0.052207
+        - 0.004823
+        radius: 0.016
+      right_outer_finger:
+      - center:
+        - -0.020236
+        - -0.065768
+        - -0.050249
+        radius: 0.016
+      - center:
+        - -0.002694
+        - -0.069307
+        - -0.09654
+        radius: 0.01
+      right_inner_knuckle:
+      - center:
+        - -0.056785
+        - -0.03571
+        - -0.025365
+        radius: 0.012
+      right_inner_finger:
+      - center:
+        - -0.021384
+        - -0.049676
+        - -0.08592
+        radius: 0.01
+    collision_sphere_buffer: 0.002
+    use_global_cumul: true
+    self_collision_ignore:
+      panda_link0:
+      - panda_link1
+      - panda_link2
+      panda_link1:
+      - panda_link2
+      - panda_link3
+      - panda_link4
+      panda_link2:
+      - panda_link3
+      - panda_link4
+      panda_link3:
+      - panda_link4
+      - panda_link6
+      panda_link4:
+      - panda_link5
+      - panda_link6
+      - panda_link7
+      - panda_link8
+      panda_link5:
+      - panda_link6
+      - panda_link7
+      - panda_link8
+      panda_link6:
+      - panda_link7
+      - panda_link8
+      panda_link7:
+      - panda_link8
+      - base_link
+      - left_outer_knuckle
+      - left_outer_finger
+      - left_inner_knuckle
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_outer_finger
+      - right_inner_knuckle
+      - right_inner_finger
+      panda_link8:
+      - base_link
+      - left_outer_knuckle
+      - left_outer_finger
+      - left_inner_knuckle
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_outer_finger
+      - right_inner_knuckle
+      - right_inner_finger
+      base_link:
+      - left_outer_knuckle
+      - left_inner_knuckle
+      - left_outer_finger
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      left_outer_knuckle:
+      - left_inner_knuckle
+      - left_outer_finger
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      left_outer_finger:
+      - left_inner_knuckle
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      left_inner_knuckle:
+      - left_inner_finger
+      - right_outer_knuckle
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      left_inner_finger:
+      - right_outer_knuckle
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      right_outer_knuckle:
+      - right_inner_knuckle
+      - right_outer_finger
+      - right_inner_finger
+      right_outer_finger:
+      - right_inner_knuckle
+      - right_inner_finger
+      right_inner_knuckle:
+      - right_inner_finger
+    self_collision_buffer:
+      panda_link0: 0.1
+      panda_link1: 0.05
+      panda_link2: 0.0
+      panda_link3: 0.0
+      panda_link4: 0.0
+      panda_link5: 0.0
+      panda_link6: 0.0
+      panda_link7: 0.0
+      panda_link8: 0.0
+      base_link: 0.01
+      left_outer_knuckle: 0.005
+      left_outer_finger: 0.005
+      left_inner_knuckle: 0.005
+      left_inner_finger: 0.005
+      right_outer_knuckle: 0.005
+      right_outer_finger: 0.005
+      right_inner_knuckle: 0.005
+      right_inner_finger: 0.005
+    cspace:
+      joint_names:
+      - panda_joint1
+      - panda_joint2
+      - panda_joint3
+      - panda_joint4
+      - panda_joint5
+      - panda_joint6
+      - panda_joint7
+      - finger_joint
+      - left_inner_finger_joint
+      - left_inner_finger_knuckle_joint
+      - right_inner_finger_joint
+      - right_inner_finger_knuckle_joint
+      - right_outer_knuckle_joint
+      retract_config:
+      - 0.0
+      - -0.6283
+      - 0.0
+      - -2.5133
+      - 0.0
+      - 1.885
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      null_space_weight:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      cspace_distance_weight:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      max_acceleration: 15.0
+      max_jerk: 500.0
